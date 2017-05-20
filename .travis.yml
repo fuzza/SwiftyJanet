@@ -6,13 +6,13 @@ env:
   - LANG=en_US.UTF-8
   - PROJECT=SwiftyJanet.xcodeproj
   - IOS_SCHEME="SwiftyJanet-iOS"
-  - IOS_SDK=iphonesimulator10.2
-  - OSX_SCHEME="SwiftyJanet-MacOS"
+  - IOS_SDK=iphonesimulator10.3
+  - OSX_SCHEME="SwiftyJanet-macOS"
   - OSX_SDK=macosx10.12
   - TVOS_SCHEME="SwiftyJanet-tvOS"
   - TVOS_SDK=appletvsimulator10.2
   matrix:
-    - DESTINATION="OS=10.2,name=iPhone 6S Plus"   SCHEME="$IOS_SCHEME"     SDK="$IOS_SDK"
+    - DESTINATION="OS=10.3,name=iPhone 6S Plus"   SCHEME="$IOS_SCHEME"     SDK="$IOS_SDK"
     - DESTINATION="arch=x86_64"                   SCHEME="$OSX_SCHEME"     SDK="$OSX_SDK"
     - DESTINATION="OS=10.2,name=Apple TV 1080p"   SCHEME="$TVOS_SCHEME"    SDK="$TVOS_SDK"
 
