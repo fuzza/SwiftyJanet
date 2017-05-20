@@ -9,7 +9,6 @@ env:
 before_install:
 - brew update
 - brew bundle
-- carthage update
 
 script:
 - fastlane all_tests
