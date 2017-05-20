@@ -1,4 +1,5 @@
 language: objective-c
+cache: bundler
 osx_image: xcode8.3
 env:
   global:
@@ -18,15 +19,15 @@ env:
 
 before_install:
 - brew update
-- brew outdated carthage || brew upgrade carthage
-- carthage update --platform iOS
-- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+- brew bundle
+- bundle
+- carthage update
 
 script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c;
+  - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | bundle exec xcpretty -c;
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
