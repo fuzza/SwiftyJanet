@@ -1,5 +1,5 @@
 language: objective-c
-cache:
+cache: bundler
 osx_image: xcode8.3
 env:
   global:
@@ -9,11 +9,7 @@ env:
 before_install:
 - brew update
 - brew bundle
-- bundle
 - carthage update
 
 script:
 - fastlane all_tests
-
-after_success:
-- bash <(curl -s https://codecov.io/bash)

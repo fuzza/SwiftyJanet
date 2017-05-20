@@ -18,6 +18,7 @@ platform :ios do
         custom_report_file_name: "report-#{platform}.junit"
       )
     end
+    codecov
   end
 
   after_all do |lane|
