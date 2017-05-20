@@ -1,3 +1,4 @@
 project "SwiftyJanet.xcodeproj"
 code_coverage true
 skip_build true
+configuration "Debug"
