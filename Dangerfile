@@ -28,7 +28,7 @@ message("Rubygems list is updated") if gemfile_updated || lockfile_updated
 
 # Warn if Gemfile was updated without updating Gemfile.lock
 if gemfile_updated && !lockfile_updated
-  warn("Gemfile was updated, but threr is not changes in Gemfile.lock. Did you forget to commit it?") if
+  warn("Gemfile was updated, but threr is not changes in Gemfile.lock. Did you forget to commit it?")
 end
 
 # Notify if Brewfile was modified
@@ -47,3 +47,11 @@ end
 if (cartfile_updated || cartfile_resolved_updated) && !podspec_updated
   warn("The `Cartfile` or `Cartfile.resolved` was updated, but there were no changes in the `podspec`. Did you forget updating the `podspec`?")
 end
+
+# Work with unit tests
+junit.parse "fastlane/test_output/report-ios.junit"
+junit.report
+
+all_test = junit.tests.map(&:attributes)
+slowest_test = sort_by { |attributes| attributes[:time].to_f }.last
+message "#{slowest_test[:time]} took #{slowest_test[:time]} seconds" unless slowest_test != nil
