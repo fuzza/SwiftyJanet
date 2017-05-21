@@ -1,0 +1,75 @@
+require("dotenv")
+fastlane_version "2.32.1"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    carthage
+  end
+
+  desc "Runs all the tests"
+  lane :all_tests do
+    targets.map do |platform|
+      scan(
+        scheme: schemes[platform],
+        sdk: sdk[platform],
+        destination: destination[platform],
+        custom_report_file_name: "report-#{platform}.junit"
+      )
+    end
+    codecov
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end
+
+def targets
+  return [
+    :macos,
+    :tvos,
+    :ios
+  ]
+end
+
+def schemes
+  return {
+    macos: "SwiftyJanet-macOS",
+    tvos: "SwiftyJanet-tvOS",
+    ios: "SwiftyJanet-iOS"
+  }
+end
+
+def destination
+  return {
+    macos: "arch=x86_64",
+    tvos: "OS=#{device_os[:tvos]},name=#{device_name[:tvos]}",
+    ios: "OS=#{device_os[:ios]},name=#{device_name[:ios]}"
+  }
+end
+
+def device_os
+  return {
+    tvos: "10.2",
+    ios: "10.3"
+  }
+end
+
+def device_name
+  return {
+    tvos: "Apple TV 1080p",
+    ios: "iPhone 6S Plus"
+  }
+end
+
+def sdk
+  return {
+    macos: "macosx10.12",
+    tvos: "appletvsimulator10.2",
+    ios: "iphonesimulator10.3"
+  }
+end

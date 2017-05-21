@@ -1,0 +1,3 @@
+project "SwiftyJanet.xcodeproj"
+skip_build true
+configuration "Debug"
