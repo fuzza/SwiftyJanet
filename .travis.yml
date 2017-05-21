@@ -1,6 +1,9 @@
 language: objective-c
 cache: bundler
 osx_image: xcode8.3
+branches:
+  only:
+  - master
 env:
   global:
   - LC_CTYPE=en_US.UTF-8
