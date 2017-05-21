@@ -1,5 +1,5 @@
 import Foundation
 
-public func mainfunc() -> Void {
-    
+public func mainfunc() {
+  
 }

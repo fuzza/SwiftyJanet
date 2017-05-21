@@ -48,14 +48,15 @@ if (cartfile_updated || cartfile_resolved_updated) && !podspec_updated
   warn("The `Cartfile` or `Cartfile.resolved` was updated, but there were no changes in the `podspec`. Did you forget updating the `podspec`?")
 end
 
+# Run swiftlint
+swiftlint.lint_files
+
 # Validate commit rules
 commit_lint.check warn: :all
 
 # Report unit tests result
 junit.parse "fastlane/test_output/report-ios.junit"
 junit.report
-
-#[:name, :file]
 
 # Report slowest unit test
 all_test = junit.tests.map(&:attributes)

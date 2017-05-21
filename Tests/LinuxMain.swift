@@ -2,5 +2,5 @@ import XCTest
 @testable import SwiftyJanetTests
 
 XCTMain([
-    testCase(SwiftyJanetTests.allTests),
+    testCase(SwiftyJanetTests.allTests)
 ])
