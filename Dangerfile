@@ -21,7 +21,7 @@ message("Fastlane config is updated") if !git.modified_files.grep(/fastlane\/Fas
 
 # Notify if Gemfile or Gemfile.lock was updated
 gemfile_updated = !git.modified_files.grep(/Gemfile/).empty?
-lockfile_updated = if !git.modified_files.grep(/Gemfile.lock/).empty?
+lockfile_updated = !git.modified_files.grep(/Gemfile.lock/).empty?
 
 # Notify if Gemfile or Gemfile.lock was updated
 message("Rubygems list is updated") if gemfile_updated || lockfile_updated
@@ -48,10 +48,21 @@ if (cartfile_updated || cartfile_resolved_updated) && !podspec_updated
   warn("The `Cartfile` or `Cartfile.resolved` was updated, but there were no changes in the `podspec`. Did you forget updating the `podspec`?")
 end
 
-# Work with unit tests
+# Validate commit rules
+commit_lint.check warn: :all
+
+# Report unit tests result
 junit.parse "fastlane/test_output/report-ios.junit"
 junit.report
 
+#[:name, :file]
+
+# Report slowest unit test
 all_test = junit.tests.map(&:attributes)
-slowest_test = sort_by { |attributes| attributes[:time].to_f }.last
-message "#{slowest_test[:time]} took #{slowest_test[:time]} seconds" unless slowest_test != nil
+slowest_test = all_test.sort_by { |attributes| attributes[:time].to_f }.last
+
+message = "### Slowest tests \n\n"
+message << "File | Name | Time |\n"
+message << "| --- | ----- | ----- |\n"
+message << "| #{slowest_test[:file]} | #{slowest_test[:name]} | #{slowest_test[:time]} |\n"
+markdown message
