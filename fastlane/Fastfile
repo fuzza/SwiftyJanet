@@ -10,10 +10,6 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :all_tests do
-    if is_ci?
-      danger
-    end
-
     targets.map do |platform|
       scan(
         scheme: schemes[platform],
@@ -22,8 +18,10 @@ platform :ios do
         custom_report_file_name: "report-#{platform}.junit"
       )
     end
-
-    codecov
+    if is_ci?
+      danger
+      codecov
+    end
   end
 
   after_all do |lane|
