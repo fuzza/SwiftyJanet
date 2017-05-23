@@ -62,8 +62,12 @@ junit.report
 all_test = junit.tests.map(&:attributes)
 slowest_test = all_test.sort_by { |attributes| attributes[:time].to_f }.last
 
-message = "### Slowest tests \n\n"
-message << "File | Name | Time |\n"
-message << "| --- | ----- | ----- |\n"
-message << "| #{slowest_test[:file]} | #{slowest_test[:name]} | #{slowest_test[:time]} |\n"
-markdown message
+if !slowest_test.nil?
+  message = "### Slowest tests \n\n"
+  message << "File | Name | Time |\n"
+  message << "| --- | ----- | ----- |\n"
+  message << "| #{slowest_test[:file]} | #{slowest_test[:name]} | #{slowest_test[:time]} |\n"
+  markdown message
+else
+  message("No tests were found. Did you forget to add them?")
+end
