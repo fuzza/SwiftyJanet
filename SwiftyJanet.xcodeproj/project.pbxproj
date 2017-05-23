@@ -121,7 +121,9 @@
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		52D6D97D1BEFF229002C0205 /* Products */ = {
 			isa = PBXGroup;
@@ -235,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6D9931BEFF229002C0205 /* Build configuration list for PBXNativeTarget "SwiftyJanet-iOS Tests" */;
 			buildPhases = (
+				6F7866F21ED35C76003D4660 /* ShellScript */,
 				52D6D9821BEFF229002C0205 /* Sources */,
 				52D6D9831BEFF229002C0205 /* Frameworks */,
 				52D6D9841BEFF229002C0205 /* Resources */,
@@ -307,6 +310,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD7502821C68FCFC006590AF /* Build configuration list for PBXNativeTarget "SwiftyJanet-macOS Tests" */;
 			buildPhases = (
+				6F7866F31ED35D2F003D4660 /* ShellScript */,
 				DD7502761C68FCFC006590AF /* Sources */,
 				DD7502771C68FCFC006590AF /* Frameworks */,
 				DD7502781C68FCFC006590AF /* Resources */,
@@ -325,6 +329,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD7502951C690C7A006590AF /* Build configuration list for PBXNativeTarget "SwiftyJanet-tvOS Tests" */;
 			buildPhases = (
+				6F7866F41ED35D35003D4660 /* ShellScript */,
 				DD7502891C690C7A006590AF /* Sources */,
 				DD75028A1C690C7A006590AF /* Frameworks */,
 				DD75028B1C690C7A006590AF /* Resources */,
@@ -453,6 +458,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F7866F21ED35C76003D4660 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -x \"$(command -v swiftlint)\" ] && [ -z \"$CI\" ]; then\nswiftlint lint --strict\nelse\necho \"warning: Swiftlint is not installed or running on CI server\"\nfi";
+		};
+		6F7866F31ED35D2F003D4660 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -x \"$(command -v swiftlint)\" ] && [ -z \"$CI\" ]; then\nswiftlint lint --strict\nelse\necho \"warning: Swiftlint is not installed or running on CI server\"\nfi";
+		};
+		6F7866F41ED35D35003D4660 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -x \"$(command -v swiftlint)\" ] && [ -z \"$CI\" ]; then\nswiftlint lint --strict\nelse\necho \"warning: Swiftlint is not installed or running on CI server\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52D6D9771BEFF229002C0205 /* Sources */ = {

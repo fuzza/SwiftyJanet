@@ -1,0 +1,41 @@
+included:
+  - Sources
+  - Tests
+excluded:
+  - Carthage
+
+disabled_rules:
+  - trailing_whitespace
+
+opt_in_rules:
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - conditional_returns_on_newline
+  - empty_count
+  - explicit_init
+  - fatal_error_message
+  - file_header
+  - first_where
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - nimble_operator
+  - number_separator
+  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - switch_case_on_newline
+
+file_length:
+  warning: 150
+  error: 200
+
+function_body_length:
+  warning: 30
+  error: 50
+
+line_length:
+  warning: 100
+  error: 120
