@@ -1,5 +1,7 @@
 language: objective-c
-cache: bundler
+cache:
+  bundler: true
+  directories: Carthage
 osx_image: xcode8.3
 branches:
   only:
