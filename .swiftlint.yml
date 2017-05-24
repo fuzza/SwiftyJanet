@@ -1,8 +1,8 @@
 included:
   - Sources
-  - Tests
 excluded:
   - Carthage
+  - Tests
 
 disabled_rules:
   - trailing_whitespace
