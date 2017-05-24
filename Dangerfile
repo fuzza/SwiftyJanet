@@ -65,5 +65,5 @@ slowest_test = all_test.sort_by { |attributes| attributes[:time].to_f }.last
 message = "### Slowest tests \n\n"
 message << "File | Name | Time |\n"
 message << "| --- | ----- | ----- |\n"
-message << "| #{slowest_test[:file]} | #{slowest_test[:name]} | #{slowest_test[:time]} |\n"
+message << "| #{slowest_test[:classname]} | #{slowest_test[:name]} | #{slowest_test[:time]} |\n"
 markdown message
