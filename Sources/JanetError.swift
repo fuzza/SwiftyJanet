@@ -1,5 +1,8 @@
 import Foundation
 
 public enum JanetError: Error {
-  case actionStateCastError
+  case actionRoutingError
+  case serviceLookupError
+  case serviceError
+  case cancelled
 }
