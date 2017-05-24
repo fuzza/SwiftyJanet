@@ -13,7 +13,7 @@ class ActionHolderTests: XCTestCase {
     
     // Assert
     XCTAssertEqual(sut.origin, "test_action")
-    XCTAssertEqual(sut.action, "test_action")
+    XCTAssertEqual(sut.modified, "test_action")
   }
   
   func test_action_mutatesHolder() {
@@ -22,18 +22,18 @@ class ActionHolderTests: XCTestCase {
     var sut = ActionHolder.create(action: action)
     
     // Act
-    sut.action = "modified_test_action"
+    sut.modified = "modified_test_action"
     
     // Assert
     XCTAssertEqual(sut.origin, "test_action")
-    XCTAssertEqual(sut.action, "modified_test_action")
+    XCTAssertEqual(sut.modified, "modified_test_action")
   }
     
   func test_isOrigin_checksForEqualityToOrigin() {
     // Arrange
     let origin = "origin"
     let modified = "modified"
-    let sut = ActionHolder(origin: origin, action: modified)
+    let sut = ActionHolder(origin: origin, modified: modified)
     
     // Act
     let result1 = sut.isOrigin(action: origin)
@@ -49,7 +49,7 @@ class ActionHolderTests: XCTestCase {
     let origin = "origin"
     let modified = "modified"
     let nonSupported: Int = 25
-    let sut = ActionHolder(origin: origin, action: modified)
+    let sut = ActionHolder(origin: origin, modified: modified)
     
     // Act
     let result = sut.isOrigin(action: nonSupported)
@@ -60,28 +60,28 @@ class ActionHolderTests: XCTestCase {
   
   func test_equatable_sameOriginsAndAction_areEqual() {
     // Arrange
-    let first = ActionHolder(origin: 1, action: 2)
-    let second = ActionHolder(origin: 1, action: 2)
+    let first = ActionHolder(origin: 1, modified: 2)
+    let second = ActionHolder(origin: 1, modified: 2)
     XCTAssertTrue(first == second)
   }
   
   func test_equatable_sameOriginsDifferentActions_areNotEqual() {
-    let first = ActionHolder(origin: 1, action: 2)
-    let second = ActionHolder(origin: 1, action: 3)
+    let first = ActionHolder(origin: 1, modified: 2)
+    let second = ActionHolder(origin: 1, modified: 3)
 
     XCTAssertFalse(first == second)
   }
   
   func test_equatable_sameActionsDifferentOrigins_areNotEqual() {
-    let first = ActionHolder(origin: 1, action: 3)
-    let second = ActionHolder(origin: 2, action: 3)
+    let first = ActionHolder(origin: 1, modified: 3)
+    let second = ActionHolder(origin: 2, modified: 3)
     
     XCTAssertFalse(first == second)
   }
   
   func test_equatable_allDifferent_areNotEqual() {
-    let first = ActionHolder(origin: 1, action: 3)
-    let second = ActionHolder(origin: 2, action: 4)
+    let first = ActionHolder(origin: 1, modified: 3)
+    let second = ActionHolder(origin: 2, modified: 4)
     
     XCTAssertFalse(first == second)
   }

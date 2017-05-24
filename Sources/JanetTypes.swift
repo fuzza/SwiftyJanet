@@ -1,3 +1,5 @@
 import Foundation
+import RxSwift
 
-public typealias ActionPair<T: Equatable> = (ActionHolder<T>, ActionState<T>)
+internal typealias ActionPair<T: Equatable> = (ActionHolder<T>, ActionState<T>)
+internal typealias SharedPipeline = PublishSubject<Any>

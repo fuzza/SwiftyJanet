@@ -4,19 +4,19 @@ import RxSwift
 
 class ActionServiceCallbackTests: XCTestCase {
   var disposeBag: DisposeBag!
-  var pipeline: PublishSubject<Any>!
+  var pipeline: SharedPipeline!
   var sut: ActionServiceCallback!
   
   override func setUp() {
     super.setUp()
     disposeBag = DisposeBag()
-    pipeline = PublishSubject()
+    pipeline = SharedPipeline()
     sut = ActionServiceCallback(pipeline: pipeline)
   }
   
   func test_onStart() {
     // Arrange
-    let holder = ActionHolder(origin: "test_origin", action: "test_action")
+    let holder = ActionHolder(origin: "test_origin", modified: "test_action")
     let expectedResult = (holder, ActionState.start("test_action"))
     
     var result: ActionPair<String>? = nil
@@ -35,7 +35,7 @@ class ActionServiceCallbackTests: XCTestCase {
   
   func test_onProgress() {
     // Arrange
-    let holder = ActionHolder(origin: "test_origin", action: "test_action")
+    let holder = ActionHolder(origin: "test_origin", modified: "test_action")
     let expectedResult = (holder, ActionState.progress("test_action", 2.3))
     
     var result: ActionPair<String>? = nil
@@ -54,7 +54,7 @@ class ActionServiceCallbackTests: XCTestCase {
   
   func test_onSuccess() {
     // Arrange
-    let holder = ActionHolder(origin: "test_origin", action: "test_action")
+    let holder = ActionHolder(origin: "test_origin", modified: "test_action")
     let expectedResult = (holder, ActionState.success("test_action"))
     
     var result: ActionPair<String>? = nil
@@ -73,7 +73,7 @@ class ActionServiceCallbackTests: XCTestCase {
   
   func test_onError() {
     // Arrange
-    let holder = ActionHolder(origin: "test_origin", action: "test_action")
+    let holder = ActionHolder(origin: "test_origin", modified: "test_action")
     let expectedResult = (holder, ActionState.error("test_action", TestError.test))
     
     var result: ActionPair<String>? = nil

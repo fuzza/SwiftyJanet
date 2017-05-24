@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 
 public final class Janet {
-  internal let pipeline: PublishSubject<Any> = PublishSubject()
+  internal let pipeline: SharedPipeline = SharedPipeline()
   private let callback: ActionServiceCallback
   
   var services: [ActionService]

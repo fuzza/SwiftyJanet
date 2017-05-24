@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 
 public final class ActionServiceCallback {
-  let pipeline: PublishSubject<Any>
+  let pipeline: SharedPipeline
   
   init(pipeline: PublishSubject<Any>) {
     self.pipeline = pipeline
@@ -10,25 +10,25 @@ public final class ActionServiceCallback {
   
   func onStart<T: Equatable>(holder: ActionHolder<T>) {
     pipeline.onNext(
-      (holder, ActionState.start(holder.action))
+      (holder, ActionState.start(holder.modified))
     )
   }
   
   func onProgress<T: Equatable>(holder: ActionHolder<T>, progress: Double) {
     pipeline.onNext(
-      (holder, ActionState.progress(holder.action, progress))
+      (holder, ActionState.progress(holder.modified, progress))
     )
   }
   
   func onSuccess<T: Equatable>(holder: ActionHolder<T>) {
     pipeline.onNext(
-      (holder, ActionState.success(holder.action))
+      (holder, ActionState.success(holder.modified))
     )
   }
   
   func onError<T: Equatable>(holder: ActionHolder<T>, error: Error) {
     pipeline.onNext(
-      (holder, ActionState.error(holder.action, error))
+      (holder, ActionState.error(holder.modified, error))
     )
   }
 }
