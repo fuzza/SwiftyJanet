@@ -1,7 +1,7 @@
 import SwiftyJanet
 
 extension ActionState: Equatable {
-  public static func ==(lhs: ActionState, rhs: ActionState) -> Bool {
+  public static func == (lhs: ActionState, rhs: ActionState) -> Bool {
     switch (lhs, rhs) {
     case (let .start(a1), let .start(a2)):
       return a1 == a2

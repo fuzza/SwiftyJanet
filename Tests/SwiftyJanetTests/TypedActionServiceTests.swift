@@ -2,6 +2,8 @@
 import XCTest
 import RxSwift
 
+// swiftlint:disable force_cast
+// swiftlint:disable force_unwrapping
 class TypedActionServiceTests: XCTestCase {
   
   var callback: ActionServiceCallback!
@@ -96,3 +98,5 @@ class TypedActionServiceTests: XCTestCase {
     XCTAssertFalse(sut.acceptsAction(of: Int.self))
   }
 }
+// swiftlint:enable force_cast
+// swiftlint:enable force_unwrapping

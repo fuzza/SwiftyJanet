@@ -1,8 +1,8 @@
 included:
   - Sources
+  - Tests
 excluded:
   - Carthage
-  - Tests
 
 disabled_rules:
   - trailing_whitespace
@@ -18,7 +18,6 @@ opt_in_rules:
   - file_header
   - first_where
   - force_unwrapping
-  - implicitly_unwrapped_optional
   - nimble_operator
   - number_separator
   - object_literal
@@ -31,6 +30,8 @@ opt_in_rules:
 file_length:
   warning: 150
   error: 200
+  excluded:
+    - Tests
 
 function_body_length:
   warning: 30

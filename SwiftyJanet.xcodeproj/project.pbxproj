@@ -22,6 +22,9 @@
 		6F78671C1ED4C610003D4660 /* JanetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78671A1ED4C610003D4660 /* JanetError.swift */; };
 		6F78671D1ED4C610003D4660 /* JanetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78671A1ED4C610003D4660 /* JanetError.swift */; };
 		6F78671E1ED4C610003D4660 /* JanetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78671A1ED4C610003D4660 /* JanetError.swift */; };
+		6F7867201ED609C2003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F78671F1ED609C2003D4660 /* Nimble.framework */; };
+		6F7867221ED609F1003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7867211ED609F1003D4660 /* Nimble.framework */; };
+		6F7867241ED60A07003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7867231ED60A07003D4660 /* Nimble.framework */; };
 		7544F1171ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F1181ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F1191ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
@@ -66,6 +69,9 @@
 		75C230061ED5B5A7008B4FCB /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFC1ED5A8AB008B4FCB /* MockService.swift */; };
 		75C230071ED5B5A7008B4FCB /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFC1ED5A8AB008B4FCB /* MockService.swift */; };
 		75C230081ED5B5A8008B4FCB /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFC1ED5A8AB008B4FCB /* MockService.swift */; };
+		75E325F51ED6C86B0082F8B2 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7866FE1ED4BCD7003D4660 /* RxTest.framework */; };
+		75E325F71ED6C8770082F8B2 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E325F61ED6C8770082F8B2 /* RxTest.framework */; };
+		75E325F91ED6C8860082F8B2 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E325F81ED6C8860082F8B2 /* RxTest.framework */; };
 		DD7502881C68FEDE006590AF /* SwiftyJanet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* SwiftyJanet.framework */; };
 		DD7502921C690C7A006590AF /* SwiftyJanet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* SwiftyJanet.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +112,9 @@
 		6F7866FE1ED4BCD7003D4660 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		6F78670E1ED4BEFA003D4660 /* TestErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestErrors.swift; sourceTree = "<group>"; };
 		6F78671A1ED4C610003D4660 /* JanetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanetError.swift; sourceTree = "<group>"; };
+		6F78671F1ED609C2003D4660 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		6F7867211ED609F1003D4660 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		6F7867231ED60A07003D4660 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActionPair+Equatable.swift"; sourceTree = "<group>"; };
 		7544F11A1ED5D86F006D2318 /* ActionState+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActionState+Equatable.swift"; sourceTree = "<group>"; };
 		75B1A2521ED48FCE003126B6 /* ActionStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStateTests.swift; sourceTree = "<group>"; };
@@ -120,6 +129,8 @@
 		75C22FFC1ED5A8AB008B4FCB /* MockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		75C22FFE1ED5AA70008B4FCB /* JanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanetTests.swift; sourceTree = "<group>"; };
 		75C230021ED5B582008B4FCB /* TypedActionServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypedActionServiceTests.swift; sourceTree = "<group>"; };
+		75E325F61ED6C8770082F8B2 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
+		75E325F81ED6C8860082F8B2 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/tvOS/RxTest.framework; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* SwiftyJanet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SwiftyJanet.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* SwiftyJanetTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SwiftyJanetTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* SwiftyJanet-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyJanet-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E325F51ED6C86B0082F8B2 /* RxTest.framework in Frameworks */,
+				6F7867201ED609C2003D4660 /* Nimble.framework in Frameworks */,
 				6F7867041ED4BD0A003D4660 /* RxSwift.framework in Frameworks */,
 				52D6D9871BEFF229002C0205 /* SwiftyJanet.framework in Frameworks */,
 			);
@@ -168,6 +181,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E325F71ED6C8770082F8B2 /* RxTest.framework in Frameworks */,
+				6F7867221ED609F1003D4660 /* Nimble.framework in Frameworks */,
 				6F7867031ED4BCFB003D4660 /* RxSwift.framework in Frameworks */,
 				DD7502881C68FEDE006590AF /* SwiftyJanet.framework in Frameworks */,
 			);
@@ -177,6 +192,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E325F91ED6C8860082F8B2 /* RxTest.framework in Frameworks */,
+				6F7867241ED60A07003D4660 /* Nimble.framework in Frameworks */,
 				6F7867011ED4BCD7003D4660 /* RxSwift.framework in Frameworks */,
 				DD7502921C690C7A006590AF /* SwiftyJanet.framework in Frameworks */,
 			);
@@ -224,6 +241,11 @@
 		6F7866FA1ED4BCD7003D4660 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75E325F81ED6C8860082F8B2 /* RxTest.framework */,
+				75E325F61ED6C8770082F8B2 /* RxTest.framework */,
+				6F7867231ED60A07003D4660 /* Nimble.framework */,
+				6F7867211ED609F1003D4660 /* Nimble.framework */,
+				6F78671F1ED609C2003D4660 /* Nimble.framework */,
 				6F7866FB1ED4BCD7003D4660 /* RxBlocking.framework */,
 				6F7866FC1ED4BCD7003D4660 /* RxCocoa.framework */,
 				6F7866FD1ED4BCD7003D4660 /* RxSwift.framework */,
@@ -623,6 +645,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 			);
 			outputPaths = (
 			);
@@ -637,6 +661,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/RxTest.framework",
 			);
 			outputPaths = (
 			);
@@ -651,6 +677,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/tvOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/RxTest.framework",
 			);
 			outputPaths = (
 			);
@@ -933,7 +961,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS/",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/SwiftyJanetTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SwiftyJanet.SwiftyJanet-iOS-Tests";
@@ -947,7 +978,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS/",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/SwiftyJanetTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SwiftyJanet.SwiftyJanet-iOS-Tests";
@@ -1106,7 +1140,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/Mac/",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Configs/SwiftyJanetTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1123,7 +1160,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/Mac/",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Configs/SwiftyJanetTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1139,7 +1179,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/tvOS/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/tvOS/",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/SwiftyJanetTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SwiftyJanet.SwiftyJanet-tvOS-Tests";
@@ -1154,7 +1197,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/tvOS/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/tvOS/",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/SwiftyJanetTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SwiftyJanet.SwiftyJanet-tvOS-Tests";

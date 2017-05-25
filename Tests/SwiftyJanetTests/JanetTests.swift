@@ -2,6 +2,8 @@
 import XCTest
 import RxSwift
 
+// swiftlint:disable force_cast
+// swiftlint:disable force_unwrapping
 class JanetTests: XCTestCase {
   
   var sut: Janet!
@@ -98,3 +100,6 @@ class JanetTests: XCTestCase {
     XCTAssertFalse(intService.didCallCancel)
   }
 }
+
+// swiftlint:enable force_cast
+// swiftlint:enable force_unwrapping

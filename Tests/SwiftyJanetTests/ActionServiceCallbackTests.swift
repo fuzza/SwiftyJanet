@@ -2,6 +2,7 @@
 import XCTest
 import RxSwift
 
+// swiftlint:disable force_unwrapping
 class ActionServiceCallbackTests: XCTestCase {
   var disposeBag: DisposeBag!
   var pipeline: SharedPipeline!
@@ -89,3 +90,4 @@ class ActionServiceCallbackTests: XCTestCase {
     XCTAssertTrue(result! == expectedResult)
   }
 }
+// swiftlint:enable force_unwrapping
