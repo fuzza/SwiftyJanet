@@ -52,4 +52,24 @@ class ActionStateTests: XCTestCase {
     // Assert
     XCTAssertEqual(result, "test_error")
   }
+  
+  func test_isCompleted_falseOnStart() {
+    let sut = ActionState.start("start")
+    XCTAssertFalse(sut.isCompleted)
+  }
+  
+  func test_isCompleted_falseOnProgress() {
+    let sut = ActionState.progress("progress", 0.5)
+    XCTAssertFalse(sut.isCompleted)
+  }
+  
+  func test_isCompleted_trueOnSuccess() {
+    let sut = ActionState.success("success")
+    XCTAssertTrue(sut.isCompleted)
+  }
+  
+  func test_isCompleted_trueOnFail() {
+    let sut = ActionState.error("error", TestError.test)
+    XCTAssertTrue(sut.isCompleted)
+  }
 }

@@ -1,5 +1,6 @@
 @testable import SwiftyJanet
 import XCTest
+import Nimble
 import RxSwift
 
 // swiftlint:disable force_cast
@@ -24,10 +25,7 @@ class TypedActionServiceTests: XCTestCase {
   func test_send_throwsRoutingError_ifActionHolderHasInvalidType() {
     let action = ActionHolder.create(action: 3)
 
-    XCTAssertThrowsError(try sut.send(action: action)) { error in
-      XCTAssertTrue(error is JanetError)
-      XCTAssertTrue(error as! JanetError == .actionRoutingError)
-    }
+    expect { self.sut.send(action: action) }.to(throwAssertion())
   }
   
   func test_send_triesInternalSend() {
@@ -38,7 +36,7 @@ class TypedActionServiceTests: XCTestCase {
     }
     
     // Act
-    XCTAssertNoThrow(try sut.send(action: action))
+    sut.send(action: action)
     
     // Assert
     XCTAssertTrue(mockService.didCallSend)
@@ -59,7 +57,7 @@ class TypedActionServiceTests: XCTestCase {
     })
     
     // Act
-    XCTAssertNoThrow(try sut.send(action: action))
+    sut.send(action: action)
     
     // Assert
     XCTAssertNotNil(resultPair)

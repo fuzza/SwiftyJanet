@@ -19,4 +19,17 @@ public enum ActionState<A: Equatable> {
       return action
     }
   }
+  
+  public var isCompleted: Bool {
+    switch self {
+    case .start(_):
+      fallthrough
+    case .progress(_, _):
+      return false
+    case .success(_):
+      fallthrough
+    case .error(_, _):
+      return true
+    }
+  }
 }

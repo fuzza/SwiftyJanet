@@ -3,7 +3,7 @@ import RxSwift
 
 public protocol ActionService: class {
   var callback: ActionServiceCallback? { get set }
-  func send(action: Any) throws
+  func send(action: Any)
   func cancel(action: Any)
   func acceptsAction(of type: Any.Type) -> Bool
 }
@@ -15,9 +15,10 @@ public protocol TypedActionService: ActionService {
 }
 
 public extension TypedActionService {
-  func send(action: Any) throws {
+  func send(action: Any) {
     guard let castedAction = action as? ActionHolder<ServiceAction> else {
-      throw JanetError.actionRoutingError
+      assertionFailure("\(self) got unexpected action \(action)")
+      return
     }
     
     do {
