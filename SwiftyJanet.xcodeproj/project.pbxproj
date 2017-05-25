@@ -24,7 +24,7 @@
 		6F78671E1ED4C610003D4660 /* JanetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78671A1ED4C610003D4660 /* JanetError.swift */; };
 		6F7867201ED609C2003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F78671F1ED609C2003D4660 /* Nimble.framework */; };
 		6F7867221ED609F1003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7867211ED609F1003D4660 /* Nimble.framework */; };
-		6F7867241ED60A07003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7867231ED60A07003D4660 /* Nimble.framework */; };
+		6F7867251ED74D51003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7867231ED60A07003D4660 /* Nimble.framework */; };
 		7544F1171ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F1181ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F1191ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
@@ -198,7 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E325F91ED6C8860082F8B2 /* RxTest.framework in Frameworks */,
-				6F7867241ED60A07003D4660 /* Nimble.framework in Frameworks */,
+				6F7867251ED74D51003D4660 /* Nimble.framework in Frameworks */,
 				6F7867011ED4BCD7003D4660 /* RxSwift.framework in Frameworks */,
 				DD7502921C690C7A006590AF /* SwiftyJanet.framework in Frameworks */,
 			);

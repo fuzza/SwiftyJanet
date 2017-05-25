@@ -6,6 +6,7 @@ import RxSwift
 
 // swiftlint:disable force_cast
 // swiftlint:disable force_unwrapping
+// swiftlint:disable file_length
 class JanetTests: XCTestCase {
   
   var sut: Janet!
@@ -190,3 +191,4 @@ class JanetTests: XCTestCase {
 
 // swiftlint:enable force_cast
 // swiftlint:enable force_unwrapping
+// swiftlint:enable file_length

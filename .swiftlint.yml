@@ -30,8 +30,6 @@ opt_in_rules:
 file_length:
   warning: 150
   error: 200
-  excluded:
-    - Tests
 
 function_body_length:
   warning: 30
