@@ -67,3 +67,6 @@ fastlane/test_output
 
 # codecov
 *.coverage.txt
+
+# AppCode
+.idea

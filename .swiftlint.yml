@@ -18,7 +18,6 @@ opt_in_rules:
   - file_header
   - first_where
   - force_unwrapping
-  - implicitly_unwrapped_optional
   - nimble_operator
   - number_separator
   - object_literal
