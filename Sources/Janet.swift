@@ -15,7 +15,7 @@ public final class Janet {
     }
   }
   
-  func send<A: Equatable>(action: A) -> Observable<ActionState<A>> {
+  func send<A: JanetAction>(action: A) -> Observable<ActionState<A>> {
     return pipeline.asObservable()
       .filter { pair in
         pair is ActionPair<A>
@@ -32,7 +32,7 @@ public final class Janet {
       }
   }
   
-  func doSend<A: Equatable>(action: A) {
+  func doSend<A: JanetAction>(action: A) {
     let serviceOptional = findService(A.self)
     guard let service = serviceOptional else {
       assertionFailure("Could not found service for \(action)")
@@ -41,7 +41,7 @@ public final class Janet {
     service.send(action: ActionHolder.create(action: action))
   }
 
-  func doCancel<A: Equatable>(action: A) {
+  func doCancel<A: JanetAction>(action: A) {
     let actionHolder = ActionHolder.create(action: action)
     callback.onError(holder: actionHolder, error: JanetError.cancelled)
     let serviceOptional = findService(A.self)

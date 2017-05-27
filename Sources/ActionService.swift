@@ -9,7 +9,7 @@ public protocol ActionService: class {
 }
 
 public protocol TypedActionService: ActionService {
-  associatedtype ServiceAction: Equatable
+  associatedtype ServiceAction: JanetAction
   func send(action: ActionHolder<ServiceAction>) throws
   func cancel(action: ActionHolder<ServiceAction>)
 }
