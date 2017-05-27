@@ -1,16 +1,16 @@
 import Foundation
 
-public struct ActionHolder <A: Equatable> {
-  let origin: A
-  var modified: A
+public struct ActionHolder <Action: JanetAction> {
+  let origin: Action
+  var modified: Action
   
-  public static func create(action: A) -> ActionHolder<A> {
+  public static func create(action: Action) -> ActionHolder<Action> {
     return ActionHolder(origin: action,
                         modified: action)
   }
   
   func isOrigin(action: Any) -> Bool {
-    guard let castedAction = action as? A else {
+    guard let castedAction = action as? Action else {
       return false
     }
     return self.origin == castedAction
@@ -18,7 +18,7 @@ public struct ActionHolder <A: Equatable> {
 }
 
 extension ActionHolder: Equatable {
-  public static func == (lhs: ActionHolder<A>, rhs: ActionHolder<A>) -> Bool {
+  public static func == (lhs: ActionHolder<Action>, rhs: ActionHolder<Action>) -> Bool {
     return lhs.origin == rhs.origin && lhs.modified == rhs.modified
   }
 }

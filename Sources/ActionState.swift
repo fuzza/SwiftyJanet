@@ -1,13 +1,13 @@
 import Foundation
 import RxSwift
 
-public enum ActionState<A: Equatable> {
-  case start(A)
-  case progress(A, Double)
-  case success(A)
-  case error(A, Error)
+public enum ActionState <Action: JanetAction> {
+  case start(Action)
+  case progress(Action, Double)
+  case success(Action)
+  case error(Action, Error)
   
-  public func action() -> A {
+  public func action() -> Action {
     switch self {
     case .start(let action):
       return action
@@ -22,13 +22,13 @@ public enum ActionState<A: Equatable> {
   
   public var isCompleted: Bool {
     switch self {
-    case .start(_):
+    case .start:
       fallthrough
-    case .progress(_, _):
+    case .progress:
       return false
-    case .success(_):
+    case .success:
       fallthrough
-    case .error(_, _):
+    case .error:
       return true
     }
   }

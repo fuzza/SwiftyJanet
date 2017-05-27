@@ -1,7 +1,7 @@
 import SwiftyJanet
 import Foundation
 
-class MockService<T: Equatable>: TypedActionService {
+class MockService<T: JanetAction>: TypedActionService {
   typealias ServiceAction = T
   typealias SendableStub = (ActionServiceCallback?, ActionHolder<ServiceAction>) throws -> Void
   typealias CancelableStub = (ActionHolder<ServiceAction>) -> Void
