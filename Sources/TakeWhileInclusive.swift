@@ -1,9 +1,21 @@
 import Foundation
 import RxSwift
 
-public extension ObservableType {
-  public func takeWhileInclusive(_ predicate: @escaping (E) -> Bool) -> Observable<E> {
-    let untilSignal = self.skipWhile(predicate)
-    return self.takeWhile(predicate).concat(untilSignal.take(1))
+extension ObservableType {
+  func takeWhileInclusive(_ predicate: @escaping (E) -> Bool) -> Observable<E> {
+    return Observable.create { observer in
+      let disposable = self.subscribe(onNext: { element in
+        observer.onNext(element)
+        if !predicate(element) {
+          observer.onCompleted()
+        }
+      }, onError: observer.onError,
+         onCompleted: observer.onCompleted
+      )
+      
+      return Disposables.create {
+        disposable.dispose()
+      }
+    }
   }
 }

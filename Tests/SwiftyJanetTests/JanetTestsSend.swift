@@ -1,0 +1,76 @@
+import SwiftyJanet
+import RxSwift
+import RxTest
+import Nimble
+import XCTest
+
+class JanetTestsSend: JanetTestCase<String> {
+
+  // MARK: Setup
+  
+  override public func providePipe(janet: Janet) -> ActionPipe<String> {
+    let actionPipe = super.providePipe(janet: janet)
+    actionPipe.observe().subscribe(observer).disposed(by: bag)
+    return actionPipe
+  }
+  
+  // MARK: Tests
+  
+  func test_success_startsImmediately() {
+    // Act
+    actionPipe.send("test_action")
+    
+    // Assert
+    observer.verifySuccessSequence(action: "test_action")
+  }
+  
+  func test_error_startsImmediately() {
+    // Arrange
+    service.sendStub = { callback, holder in
+      callback?.stubErrorSequence(holder: holder, error: TestError.test)
+    }
+    
+    // Act
+    actionPipe.send("test_action")
+    
+    // Assert
+    observer.verifyErrorSequence(action: "test_action", error: TestError.test)
+  }
+  
+  func test_assertsIfThereIsNoService() {
+    let pipe = janet.createPipe(of: Double.self)
+    expect(pipe.send(1.15)).to(throwAssertion())
+  }
+  
+  func test_subscribesOnDefaultScheduler() {
+    // Arrange
+    let pipe = self.providePipe(janet: janet, scheduler: scheduler)
+    pipe.observe().subscribe(observer).disposed(by: bag)
+    
+    // Act
+    pipe.send("test_action")
+    
+    // Asser
+    observer.verifySuccessSequence(action: "test_action", time: 1)
+  }
+  
+  func test_observesAllActionsOfGivenType() {
+    // Arrange
+    service.sendStub = { callback, holder in
+      callback?.onStart(holder: holder)
+      callback?.onStart(holder: ActionHolder.create(action: "another_action"))
+      callback?.onProgress(holder: ActionHolder.create(action: 25), progress: 0.8)
+      callback?.onError(holder: holder, error: TestError.test)
+    }
+    
+    // Act
+    actionPipe.send("test_action")
+    
+    // Assert
+    observer.verifyEvents(events: [
+      next(0, ActionState.start("test_action")),
+      next(0, ActionState.start("another_action")),
+      next(0, ActionState.error("test_action", TestError.test))
+    ])
+  }
+}
