@@ -62,7 +62,8 @@ class JanetTestsSendDeferred: JanetTestCase<String> {
     let pipe = self.providePipe(janet: janet, scheduler: scheduler)
     
     // Act
-    pipe.sendDeferred("test_action").subscribe().disposed(by:self.bag)
+    pipe.sendDeferred("test_action").subscribe(observer).disposed(by:self.bag)
+    scheduler.start()
     
     // Asser
     observer.verifySuccessSequenceCompleted(action: "test_action", time: 1)

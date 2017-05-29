@@ -22,8 +22,6 @@ class JanetTestCase <Action: JanetAction>: XCTestCase {
     service = provideService()
     janet = provideJanet(service: service)
     actionPipe = providePipe(janet: janet)
-    
-    scheduler.start()
   }
   
   override func tearDown() {
