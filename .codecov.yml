@@ -1,7 +1,7 @@
 coverage:
   range: "80...100"
   round: down
-  presicion: 2
+  precision: 2
 
   ignore:
     - Carthage
