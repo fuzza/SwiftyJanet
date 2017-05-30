@@ -16,7 +16,7 @@ class JanetTestsCancel: JanetTestCase<String> {
     
     actionPipe.observe().subscribe(observer).disposed(by: bag)
     
-    // Acti
+    // Act
     actionPipe.cancel("test_action")
     
     // Assert

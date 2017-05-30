@@ -75,4 +75,13 @@ class JanetTestsSend: JanetTestCase<String> {
       next(0, ActionState.error("test_action", TestError.test))
     ])
   }
+  
+  func test_subscribesOnProvidedScheduler() {
+    // Act
+    actionPipe.send("test_action", subscribeOn: scheduler)
+    scheduler.start()
+    
+    // Assert
+    observer.verifySuccessSequence(action: "test_action", time: 1)
+  }
 }

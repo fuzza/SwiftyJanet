@@ -26,8 +26,13 @@ public final class ActionPipe <Action: JanetAction> {
     return statePipe
   }
   
-  public func send(_ action: Action) {
-    sendDeferred(action: action, subscribeOn:defaultScheduler)
+  public func send(_ action: Action, subscribeOn: SchedulerType? = nil) {
+    var scheduler = defaultScheduler
+    if let customScheduler = subscribeOn {
+      scheduler = customScheduler
+    }
+    
+    sendDeferred(action: action, subscribeOn:scheduler)
       .subscribe()
       .disposed(by: bag)
   }
