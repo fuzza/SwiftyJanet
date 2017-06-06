@@ -2,8 +2,8 @@ import Foundation
 import RxSwift
 
 public final class ActionPipe <Action: JanetAction> {
-  public typealias ActionSender<T: Equatable> = (T) -> Observable<ActionState<T>>
-  public typealias ActionCancel<T: Equatable> = (T) -> Void
+  public typealias ActionSender<T: JanetAction> = (T) -> Observable<ActionState<T>>
+  public typealias ActionCancel<T: JanetAction> = (T) -> Void
   
   private let bag: DisposeBag = DisposeBag()
   private let defaultScheduler: SchedulerType?

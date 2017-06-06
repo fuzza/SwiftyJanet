@@ -19,8 +19,8 @@ public final class Janet {
     return self.createPipe(of: type, subscribeOn: nil)
   }
   
-  public func createPipe<A: Equatable>(of type: A.Type,
-                                       subscribeOn: SchedulerType? = nil) -> ActionPipe<A> {
+  public func createPipe<A: JanetAction>(of type: A.Type,
+                                         subscribeOn: SchedulerType? = nil) -> ActionPipe<A> {
     let statePipe = pipeline.asObservable()
       .filter { pair in
         pair is ActionPair<A>
