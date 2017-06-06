@@ -1,6 +1,15 @@
 import Foundation
 
-public struct ActionHolder <Action: JanetAction> {
+public protocol OriginComparable {
+  associatedtype Act: JanetAction
+  
+  var origin: Act { get }
+  func isOrigin(action: Any) -> Bool
+}
+
+public struct ActionHolder <Action: JanetAction>: OriginComparable {
+  public typealias Act = Action
+  
   public let origin: Action
   public var modified: Action
   
@@ -9,16 +18,17 @@ public struct ActionHolder <Action: JanetAction> {
                         modified: action)
   }
   
-  func isOrigin(action: Any) -> Bool {
+  public func isOrigin(action: Any) -> Bool {
     guard let castedAction = action as? Action else {
       return false
     }
-    return self.origin == castedAction
+    return self.origin.isEqual(to: castedAction)
   }
 }
 
 extension ActionHolder: Equatable {
   public static func == (lhs: ActionHolder<Action>, rhs: ActionHolder<Action>) -> Bool {
-    return lhs.origin == rhs.origin && lhs.modified == rhs.modified
+    return lhs.origin.isEqual(to: rhs.origin) &&
+           lhs.modified.isEqual(to: rhs.modified)
   }
 }
