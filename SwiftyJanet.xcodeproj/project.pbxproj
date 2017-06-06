@@ -25,12 +25,25 @@
 		6F7867201ED609C2003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F78671F1ED609C2003D4660 /* Nimble.framework */; };
 		6F7867221ED609F1003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7867211ED609F1003D4660 /* Nimble.framework */; };
 		6F7867251ED74D51003D4660 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7867231ED60A07003D4660 /* Nimble.framework */; };
+		6F7867271ED756D6003D4660 /* ActionPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867261ED756D6003D4660 /* ActionPipe.swift */; };
+		6F78672A1EDC94F2003D4660 /* GenericTestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867281EDC94CD003D4660 /* GenericTestLoader.swift */; };
+		6F78672B1EDC94F3003D4660 /* GenericTestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867281EDC94CD003D4660 /* GenericTestLoader.swift */; };
+		6F78672C1EDC94F3003D4660 /* GenericTestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867281EDC94CD003D4660 /* GenericTestLoader.swift */; };
 		7544F1171ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F1181ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F1191ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F11B1ED5D86F006D2318 /* ActionState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F11A1ED5D86F006D2318 /* ActionState+Equatable.swift */; };
 		7544F11C1ED5D86F006D2318 /* ActionState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F11A1ED5D86F006D2318 /* ActionState+Equatable.swift */; };
 		7544F11D1ED5D86F006D2318 /* ActionState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F11A1ED5D86F006D2318 /* ActionState+Equatable.swift */; };
+		757328201ED8427900283A71 /* RxTest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573281E1ED8421C00283A71 /* RxTest+Extensions.swift */; };
+		757328211ED8427A00283A71 /* RxTest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573281E1ED8421C00283A71 /* RxTest+Extensions.swift */; };
+		757328221ED8427A00283A71 /* RxTest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573281E1ED8421C00283A71 /* RxTest+Extensions.swift */; };
+		757328261ED863A600283A71 /* JanetTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757328251ED863A600283A71 /* JanetTestCase.swift */; };
+		757328271ED863A600283A71 /* JanetTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757328251ED863A600283A71 /* JanetTestCase.swift */; };
+		757328281ED863A600283A71 /* JanetTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757328251ED863A600283A71 /* JanetTestCase.swift */; };
+		7573282D1ED86D0900283A71 /* JanetTestAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573282B1ED86BDC00283A71 /* JanetTestAction.swift */; };
+		7573282E1ED86D0A00283A71 /* JanetTestAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573282B1ED86BDC00283A71 /* JanetTestAction.swift */; };
+		7573282F1ED86D0A00283A71 /* JanetTestAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573282B1ED86BDC00283A71 /* JanetTestAction.swift */; };
 		75B1A2531ED48FCE003126B6 /* ActionStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1A2521ED48FCE003126B6 /* ActionStateTests.swift */; };
 		75B1A2581ED49146003126B6 /* ActionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1A2571ED49146003126B6 /* ActionState.swift */; };
 		75B1A2591ED49146003126B6 /* ActionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1A2571ED49146003126B6 /* ActionState.swift */; };
@@ -60,15 +73,30 @@
 		75C22FF91ED5A556008B4FCB /* ActionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FF21ED5A550008B4FCB /* ActionService.swift */; };
 		75C22FFA1ED5A556008B4FCB /* ActionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FF21ED5A550008B4FCB /* ActionService.swift */; };
 		75C22FFB1ED5A557008B4FCB /* ActionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FF21ED5A550008B4FCB /* ActionService.swift */; };
-		75C22FFF1ED5AA70008B4FCB /* JanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFE1ED5AA70008B4FCB /* JanetTests.swift */; };
-		75C230001ED5B1DC008B4FCB /* JanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFE1ED5AA70008B4FCB /* JanetTests.swift */; };
-		75C230011ED5B1DC008B4FCB /* JanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFE1ED5AA70008B4FCB /* JanetTests.swift */; };
+		75C22FFF1ED5AA70008B4FCB /* JanetTestsCancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFE1ED5AA70008B4FCB /* JanetTestsCancel.swift */; };
+		75C230001ED5B1DC008B4FCB /* JanetTestsCancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFE1ED5AA70008B4FCB /* JanetTestsCancel.swift */; };
+		75C230011ED5B1DC008B4FCB /* JanetTestsCancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFE1ED5AA70008B4FCB /* JanetTestsCancel.swift */; };
 		75C230031ED5B582008B4FCB /* TypedActionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C230021ED5B582008B4FCB /* TypedActionServiceTests.swift */; };
 		75C230041ED5B59D008B4FCB /* TypedActionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C230021ED5B582008B4FCB /* TypedActionServiceTests.swift */; };
 		75C230051ED5B59D008B4FCB /* TypedActionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C230021ED5B582008B4FCB /* TypedActionServiceTests.swift */; };
 		75C230061ED5B5A7008B4FCB /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFC1ED5A8AB008B4FCB /* MockService.swift */; };
 		75C230071ED5B5A7008B4FCB /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFC1ED5A8AB008B4FCB /* MockService.swift */; };
 		75C230081ED5B5A8008B4FCB /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C22FFC1ED5A8AB008B4FCB /* MockService.swift */; };
+		75E0376A1EDC44C90078FFA8 /* ActionPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867261ED756D6003D4660 /* ActionPipe.swift */; };
+		75E0376B1EDC44CA0078FFA8 /* ActionPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867261ED756D6003D4660 /* ActionPipe.swift */; };
+		75E0376C1EDC44CA0078FFA8 /* ActionPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867261ED756D6003D4660 /* ActionPipe.swift */; };
+		75E0376F1EDC45680078FFA8 /* JanetTestsSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0376D1EDC45450078FFA8 /* JanetTestsSend.swift */; };
+		75E037701EDC45680078FFA8 /* JanetTestsSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0376D1EDC45450078FFA8 /* JanetTestsSend.swift */; };
+		75E037711EDC45690078FFA8 /* JanetTestsSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0376D1EDC45450078FFA8 /* JanetTestsSend.swift */; };
+		75E037741EDC4A7C0078FFA8 /* RxTest+ActionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E037721EDC49850078FFA8 /* RxTest+ActionState.swift */; };
+		75E037751EDC4A7D0078FFA8 /* RxTest+ActionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E037721EDC49850078FFA8 /* RxTest+ActionState.swift */; };
+		75E037761EDC4A7D0078FFA8 /* RxTest+ActionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E037721EDC49850078FFA8 /* RxTest+ActionState.swift */; };
+		75E037791EDC62350078FFA8 /* ActionServiceCallback+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E037771EDC620F0078FFA8 /* ActionServiceCallback+Stub.swift */; };
+		75E0377A1EDC62360078FFA8 /* ActionServiceCallback+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E037771EDC620F0078FFA8 /* ActionServiceCallback+Stub.swift */; };
+		75E0377B1EDC62360078FFA8 /* ActionServiceCallback+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E037771EDC620F0078FFA8 /* ActionServiceCallback+Stub.swift */; };
+		75E0377D1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0377C1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift */; };
+		75E0377E1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0377C1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift */; };
+		75E0377F1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0377C1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift */; };
 		75E325F51ED6C86B0082F8B2 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7866FE1ED4BCD7003D4660 /* RxTest.framework */; };
 		75E325F71ED6C8770082F8B2 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E325F61ED6C8770082F8B2 /* RxTest.framework */; };
 		75E325F91ED6C8860082F8B2 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E325F81ED6C8860082F8B2 /* RxTest.framework */; };
@@ -119,8 +147,13 @@
 		6F78671F1ED609C2003D4660 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		6F7867211ED609F1003D4660 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		6F7867231ED60A07003D4660 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
+		6F7867261ED756D6003D4660 /* ActionPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionPipe.swift; sourceTree = "<group>"; };
+		6F7867281EDC94CD003D4660 /* GenericTestLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTestLoader.swift; sourceTree = "<group>"; };
 		7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActionPair+Equatable.swift"; sourceTree = "<group>"; };
 		7544F11A1ED5D86F006D2318 /* ActionState+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActionState+Equatable.swift"; sourceTree = "<group>"; };
+		7573281E1ED8421C00283A71 /* RxTest+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxTest+Extensions.swift"; sourceTree = "<group>"; };
+		757328251ED863A600283A71 /* JanetTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanetTestCase.swift; sourceTree = "<group>"; };
+		7573282B1ED86BDC00283A71 /* JanetTestAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanetTestAction.swift; sourceTree = "<group>"; };
 		75B1A2521ED48FCE003126B6 /* ActionStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStateTests.swift; sourceTree = "<group>"; };
 		75B1A2571ED49146003126B6 /* ActionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionState.swift; sourceTree = "<group>"; };
 		75B1A25D1ED49392003126B6 /* ActionHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHolder.swift; sourceTree = "<group>"; };
@@ -131,8 +164,12 @@
 		75C22FF21ED5A550008B4FCB /* ActionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionService.swift; sourceTree = "<group>"; };
 		75C22FF31ED5A550008B4FCB /* Janet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Janet.swift; sourceTree = "<group>"; };
 		75C22FFC1ED5A8AB008B4FCB /* MockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
-		75C22FFE1ED5AA70008B4FCB /* JanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JanetTests.swift; sourceTree = "<group>"; tabWidth = 2; };
+		75C22FFE1ED5AA70008B4FCB /* JanetTestsCancel.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JanetTestsCancel.swift; sourceTree = "<group>"; tabWidth = 2; };
 		75C230021ED5B582008B4FCB /* TypedActionServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypedActionServiceTests.swift; sourceTree = "<group>"; };
+		75E0376D1EDC45450078FFA8 /* JanetTestsSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanetTestsSend.swift; sourceTree = "<group>"; };
+		75E037721EDC49850078FFA8 /* RxTest+ActionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxTest+ActionState.swift"; sourceTree = "<group>"; };
+		75E037771EDC620F0078FFA8 /* ActionServiceCallback+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActionServiceCallback+Stub.swift"; sourceTree = "<group>"; };
+		75E0377C1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanetTestsSendDeferred.swift; sourceTree = "<group>"; };
 		75E325F61ED6C8770082F8B2 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
 		75E325F81ED6C8860082F8B2 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/tvOS/RxTest.framework; sourceTree = "<group>"; };
 		75E325FB1ED6E4AF0082F8B2 /* TakeWhileInclusive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeWhileInclusive.swift; sourceTree = "<group>"; };
@@ -273,8 +310,20 @@
 			children = (
 				7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */,
 				7544F11A1ED5D86F006D2318 /* ActionState+Equatable.swift */,
+				7573281E1ED8421C00283A71 /* RxTest+Extensions.swift */,
+				75E037721EDC49850078FFA8 /* RxTest+ActionState.swift */,
+				75E037771EDC620F0078FFA8 /* ActionServiceCallback+Stub.swift */,
 			);
 			path = TestExtensions;
+			sourceTree = "<group>";
+		};
+		757328241ED8638700283A71 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				757328251ED863A600283A71 /* JanetTestCase.swift */,
+				7573282B1ED86BDC00283A71 /* JanetTestAction.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		75E325FA1ED6E4970082F8B2 /* Extensions */ = {
@@ -296,6 +345,7 @@
 				75B1A25D1ED49392003126B6 /* ActionHolder.swift */,
 				6F78671A1ED4C610003D4660 /* JanetError.swift */,
 				75C22FED1ED59FD4008B4FCB /* JanetTypes.swift */,
+				6F7867261ED756D6003D4660 /* ActionPipe.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -303,13 +353,17 @@
 		8933C7831EB5B7EB000D00A4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				757328241ED8638700283A71 /* Base */,
 				7544F1151ED5D6A1006D2318 /* TestExtensions */,
 				6F78670D1ED4BEF1003D4660 /* TestDoubles */,
 				75B1A2521ED48FCE003126B6 /* ActionStateTests.swift */,
 				75B1A2621ED49688003126B6 /* ActionServiceCallbackTests.swift */,
 				75C22FE81ED59F2A008B4FCB /* ActionHolderTests.swift */,
-				75C22FFE1ED5AA70008B4FCB /* JanetTests.swift */,
 				75C230021ED5B582008B4FCB /* TypedActionServiceTests.swift */,
+				75E0376D1EDC45450078FFA8 /* JanetTestsSend.swift */,
+				75E0377C1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift */,
+				75C22FFE1ED5AA70008B4FCB /* JanetTestsCancel.swift */,
+				6F7867281EDC94CD003D4660 /* GenericTestLoader.swift */,
 			);
 			name = Tests;
 			path = Tests/SwiftyJanetTests;
@@ -707,6 +761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F7867271ED756D6003D4660 /* ActionPipe.swift in Sources */,
 				75C22FEE1ED59FD4008B4FCB /* JanetTypes.swift in Sources */,
 				75E325FC1ED6E4AF0082F8B2 /* TakeWhileInclusive.swift in Sources */,
 				6F78671B1ED4C610003D4660 /* JanetError.swift in Sources */,
@@ -722,12 +777,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75C22FFF1ED5AA70008B4FCB /* JanetTests.swift in Sources */,
+				75E037791EDC62350078FFA8 /* ActionServiceCallback+Stub.swift in Sources */,
+				75E0377D1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift in Sources */,
+				75E037741EDC4A7C0078FFA8 /* RxTest+ActionState.swift in Sources */,
+				75C22FFF1ED5AA70008B4FCB /* JanetTestsCancel.swift in Sources */,
 				75B1A2531ED48FCE003126B6 /* ActionStateTests.swift in Sources */,
 				7544F11B1ED5D86F006D2318 /* ActionState+Equatable.swift in Sources */,
+				757328201ED8427900283A71 /* RxTest+Extensions.swift in Sources */,
+				75E0376F1EDC45680078FFA8 /* JanetTestsSend.swift in Sources */,
 				75C230061ED5B5A7008B4FCB /* MockService.swift in Sources */,
 				75C22FEA1ED59F76008B4FCB /* ActionHolderTests.swift in Sources */,
+				7573282D1ED86D0900283A71 /* JanetTestAction.swift in Sources */,
+				6F78672A1EDC94F2003D4660 /* GenericTestLoader.swift in Sources */,
 				75C230031ED5B582008B4FCB /* TypedActionServiceTests.swift in Sources */,
+				757328261ED863A600283A71 /* JanetTestCase.swift in Sources */,
 				75B1A2631ED49688003126B6 /* ActionServiceCallbackTests.swift in Sources */,
 				6F7867141ED4BF23003D4660 /* TestErrors.swift in Sources */,
 				7544F1171ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */,
@@ -738,6 +801,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E0376B1EDC44CA0078FFA8 /* ActionPipe.swift in Sources */,
 				75C22FFB1ED5A557008B4FCB /* ActionService.swift in Sources */,
 				75C22FF71ED5A553008B4FCB /* Janet.swift in Sources */,
 				75C22FF01ED5A004008B4FCB /* JanetTypes.swift in Sources */,
@@ -753,6 +817,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E0376C1EDC44CA0078FFA8 /* ActionPipe.swift in Sources */,
 				75C22FFA1ED5A556008B4FCB /* ActionService.swift in Sources */,
 				75C22FF81ED5A553008B4FCB /* Janet.swift in Sources */,
 				75C22FF11ED5A005008B4FCB /* JanetTypes.swift in Sources */,
@@ -768,6 +833,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E0376A1EDC44C90078FFA8 /* ActionPipe.swift in Sources */,
 				75C22FF91ED5A556008B4FCB /* ActionService.swift in Sources */,
 				75C22FF61ED5A552008B4FCB /* Janet.swift in Sources */,
 				75C22FEF1ED5A004008B4FCB /* JanetTypes.swift in Sources */,
@@ -783,12 +849,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75C230001ED5B1DC008B4FCB /* JanetTests.swift in Sources */,
+				75E0377A1EDC62360078FFA8 /* ActionServiceCallback+Stub.swift in Sources */,
+				75E0377E1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift in Sources */,
+				75E037751EDC4A7D0078FFA8 /* RxTest+ActionState.swift in Sources */,
+				75C230001ED5B1DC008B4FCB /* JanetTestsCancel.swift in Sources */,
 				6F7867181ED4BF2C003D4660 /* ActionServiceCallbackTests.swift in Sources */,
 				7544F11C1ED5D86F006D2318 /* ActionState+Equatable.swift in Sources */,
+				757328221ED8427A00283A71 /* RxTest+Extensions.swift in Sources */,
+				75E037701EDC45680078FFA8 /* JanetTestsSend.swift in Sources */,
 				75C230071ED5B5A7008B4FCB /* MockService.swift in Sources */,
 				75C22FEB1ED59F76008B4FCB /* ActionHolderTests.swift in Sources */,
+				7573282E1ED86D0A00283A71 /* JanetTestAction.swift in Sources */,
+				6F78672B1EDC94F3003D4660 /* GenericTestLoader.swift in Sources */,
 				75C230041ED5B59D008B4FCB /* TypedActionServiceTests.swift in Sources */,
+				757328271ED863A600283A71 /* JanetTestCase.swift in Sources */,
 				6F7867131ED4BF22003D4660 /* TestErrors.swift in Sources */,
 				6F7867161ED4BF29003D4660 /* ActionStateTests.swift in Sources */,
 				7544F1181ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */,
@@ -799,12 +873,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75C230011ED5B1DC008B4FCB /* JanetTests.swift in Sources */,
+				75E0377B1EDC62360078FFA8 /* ActionServiceCallback+Stub.swift in Sources */,
+				75E0377F1EDC67BD0078FFA8 /* JanetTestsSendDeferred.swift in Sources */,
+				75E037761EDC4A7D0078FFA8 /* RxTest+ActionState.swift in Sources */,
+				75C230011ED5B1DC008B4FCB /* JanetTestsCancel.swift in Sources */,
 				6F7867191ED4BF2C003D4660 /* ActionServiceCallbackTests.swift in Sources */,
 				7544F11D1ED5D86F006D2318 /* ActionState+Equatable.swift in Sources */,
+				757328211ED8427A00283A71 /* RxTest+Extensions.swift in Sources */,
+				75E037711EDC45690078FFA8 /* JanetTestsSend.swift in Sources */,
 				75C230081ED5B5A8008B4FCB /* MockService.swift in Sources */,
 				75C22FEC1ED59F77008B4FCB /* ActionHolderTests.swift in Sources */,
+				7573282F1ED86D0A00283A71 /* JanetTestAction.swift in Sources */,
+				6F78672C1EDC94F3003D4660 /* GenericTestLoader.swift in Sources */,
 				75C230051ED5B59D008B4FCB /* TypedActionServiceTests.swift in Sources */,
+				757328281ED863A600283A71 /* JanetTestCase.swift in Sources */,
 				6F7867151ED4BF24003D4660 /* TestErrors.swift in Sources */,
 				6F7867171ED4BF29003D4660 /* ActionStateTests.swift in Sources */,
 				7544F1191ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */,

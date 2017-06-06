@@ -7,7 +7,7 @@ public final class Janet {
   
   var services: [ActionService]
   
-  init(services: [ActionService]) {
+  public init(services: [ActionService]) {
     self.callback = ActionServiceCallback(pipeline: pipeline)
     self.services = services
     self.services.forEach {
@@ -15,7 +15,31 @@ public final class Janet {
     }
   }
   
-  func send<A: JanetAction>(action: A) -> Observable<ActionState<A>> {
+  public func createPipe<A: JanetAction>(of type: A.Type) -> ActionPipe<A> {
+    return self.createPipe(of: type, subscribeOn: nil)
+  }
+  
+  public func createPipe<A: JanetAction>(of type: A.Type,
+                                         subscribeOn: SchedulerType? = nil) -> ActionPipe<A> {
+    let statePipe = pipeline.asObservable()
+      .filter { pair in
+        pair is ActionPair<A>
+      }.map { pair in
+        pair as! ActionPair<A> // swiftlint:disable:this force_cast
+      }.map { (_, state) in
+        state
+      }.filter { state in
+        let action = state.action()
+        return type(of: action) == A.self
+      }
+    
+    return ActionPipe(statePipe: statePipe,
+                      actionSender: self.send,
+                      actionCancel: self.doCancel,
+                      defaultScheduler: subscribeOn)
+  }
+  
+  private func send<A: JanetAction>(action: A) -> Observable<ActionState<A>> {
     return pipeline.asObservable()
       .filter { pair in
         pair is ActionPair<A>
@@ -32,7 +56,7 @@ public final class Janet {
       }
   }
   
-  func doSend<A: JanetAction>(action: A) {
+  private func doSend<A: JanetAction>(action: A) {
     let serviceOptional = findService(A.self)
     guard let service = serviceOptional else {
       assertionFailure("Could not found service for \(action)")
@@ -40,8 +64,8 @@ public final class Janet {
     }
     service.send(action: ActionHolder.create(action: action))
   }
-
-  func doCancel<A: JanetAction>(action: A) {
+  
+  private func doCancel<A: JanetAction>(action: A) {
     let actionHolder = ActionHolder.create(action: action)
     callback.onError(holder: actionHolder, error: JanetError.cancelled)
     let serviceOptional = findService(A.self)

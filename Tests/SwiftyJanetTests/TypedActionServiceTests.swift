@@ -22,7 +22,7 @@ class TypedActionServiceTests: XCTestCase {
   }
   
   // MARK: Sending tests
-  func test_send_throwsRoutingError_ifActionHolderHasInvalidType() {
+  func test_send_assertsIfActionHolderHasInvalidType() {
     let action = ActionHolder.create(action: 3)
 
     expect { self.sut.send(action: action) }.to(throwAssertion())

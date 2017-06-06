@@ -1,8 +1,8 @@
 import Foundation
 
 public struct ActionHolder <Action: JanetAction> {
-  let origin: Action
-  var modified: Action
+  public let origin: Action
+  public var modified: Action
   
   public static func create(action: Action) -> ActionHolder<Action> {
     return ActionHolder(origin: action,
