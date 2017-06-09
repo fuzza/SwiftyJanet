@@ -57,7 +57,7 @@ public final class Janet {
   }
   
   private func doSend<A: JanetAction>(action: A) {
-    let serviceOptional = findService(A.self)
+    let serviceOptional = findService(action: action)
     guard let service = serviceOptional else {
       assertionFailure("Could not found service for \(action)")
       return
@@ -68,7 +68,7 @@ public final class Janet {
   private func doCancel<A: JanetAction>(action: A) {
     let actionHolder = ActionHolder.create(action: action)
     callback.onError(holder: actionHolder, error: JanetError.cancelled)
-    let serviceOptional = findService(A.self)
+    let serviceOptional = findService(action: action)
     guard let service = serviceOptional else {
       assertionFailure("Could not found service for \(action)")
       return
@@ -76,9 +76,9 @@ public final class Janet {
     service.cancel(action: actionHolder)
   }
   
-  private func findService(_ actionType: Any.Type) -> ActionService? {
+  private func findService<A: JanetAction>(action: A) -> ActionService? {
     return self.services.first(where: {
-      $0.acceptsAction(of: actionType)
+      $0.accepts(action: action)
     })
   }
 }

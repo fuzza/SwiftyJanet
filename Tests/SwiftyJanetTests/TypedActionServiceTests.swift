@@ -92,8 +92,8 @@ class TypedActionServiceTests: XCTestCase {
   
   // MARK: Supported actions test
   func test_acceptsAction_checksForAssociatedType() {
-    XCTAssertTrue(sut.acceptsAction(of: String.self))
-    XCTAssertFalse(sut.acceptsAction(of: Int.self))
+    XCTAssertTrue(sut.accepts(action: "test"))
+    XCTAssertFalse(sut.accepts(action: 123))
   }
 }
 // swiftlint:enable force_cast

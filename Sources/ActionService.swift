@@ -5,7 +5,7 @@ public protocol ActionService: class {
   var callback: ActionServiceCallback? { get set }
   func send(action: Any)
   func cancel(action: Any)
-  func acceptsAction(of type: Any.Type) -> Bool
+  func accepts(action: Any) -> Bool
 }
 
 public protocol TypedActionService: ActionService {
@@ -35,7 +35,7 @@ public extension TypedActionService {
     cancel(action: castedAction)
   }
   
-  func acceptsAction(of type: Any.Type) -> Bool {
-    return type is ServiceAction.Type
+  func accepts(action: Any) -> Bool {
+    return action is ServiceAction
   }
 }
