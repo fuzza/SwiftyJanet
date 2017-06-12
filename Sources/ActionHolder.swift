@@ -24,6 +24,20 @@ public struct ActionHolder <Action: JanetAction>: OriginComparable {
     }
     return self.origin.isEqual(to: castedAction)
   }
+  
+  public init(origin: Action, modified: Action) {
+    self.origin = origin
+    self.modified = modified
+  }
+  
+  public init<O: JanetAction>(_ holder: ActionHolder<O>) throws {
+    guard let castedOrigin = holder.origin as? Action,
+          let castedModified = holder.modified as? Action else {
+      throw JanetError.castError
+    }
+    self = ActionHolder(origin: castedOrigin,
+                        modified: castedModified)
+  }
 }
 
 extension ActionHolder: Equatable {

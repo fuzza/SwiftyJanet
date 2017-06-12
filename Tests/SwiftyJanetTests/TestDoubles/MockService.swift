@@ -1,22 +1,27 @@
 import SwiftyJanet
 import Foundation
 
-class MockService<T: JanetAction>: TypedActionService {
-  typealias ServiceAction = T
-  typealias SendableStub = (ActionServiceCallback?, ActionHolder<ServiceAction>) throws -> Void
-  typealias CancelableStub = (ActionHolder<ServiceAction>) -> Void
+class MockService<Action: JanetAction>: ActionService {
+  typealias SendableStub = (ActionServiceCallback?, ActionHolder<Action>) throws -> Void
+  typealias CancelableStub = (ActionHolder<Action>) -> Void
   
   // MARK: TypedActionService
   var callback: ActionServiceCallback?
   
-  func send(action: ActionHolder<ServiceAction>) throws {
+  func sendInternal<T>(action: ActionHolder<T>) throws where T : JanetAction {
     didCallSend = true
-    try sendStub?(callback, action)
+    let casted: ActionHolder<Action> = try! ActionHolder(action) //swiftlint:disable:this force_try
+    try sendStub?(callback, casted)
   }
   
-  func cancel(action: ActionHolder<T>) {
+  func cancel<T>(action: ActionHolder<T>) where T : JanetAction {
     didCallCancel = true
-    cancelStub?(action)
+    let casted: ActionHolder<Action> = try! ActionHolder(action) //swiftlint:disable:this force_try
+    cancelStub?(casted)
+  }
+  
+  func accepts<T>(action: T) -> Bool where T : JanetAction {
+    return action is Action
   }
   
   // MARK: Stubbing

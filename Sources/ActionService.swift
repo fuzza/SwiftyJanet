@@ -3,39 +3,20 @@ import RxSwift
 
 public protocol ActionService: class {
   var callback: ActionServiceCallback? { get set }
-  func send(action: Any)
-  func cancel(action: Any)
-  func accepts(action: Any) -> Bool
+  
+  func send<T: JanetAction>(action: ActionHolder<T>)
+  func sendInternal<T: JanetAction>(action: ActionHolder<T>) throws
+  
+  func cancel<T: JanetAction>(action: ActionHolder<T>)
+  func accepts<T: JanetAction>(action: T) -> Bool
 }
 
-public protocol TypedActionService: ActionService {
-  associatedtype ServiceAction: JanetAction
-  func send(action: ActionHolder<ServiceAction>) throws
-  func cancel(action: ActionHolder<ServiceAction>)
-}
-
-public extension TypedActionService {
-  func send(action: Any) {
-    guard let castedAction = action as? ActionHolder<ServiceAction> else {
-      assertionFailure("\(self) got unexpected action \(action)")
-      return
-    }
-    
+public extension ActionService {
+  func send<T: JanetAction>(action: ActionHolder<T>) {
     do {
-      try send(action: castedAction)
+      try sendInternal(action: action)
     } catch {
-      self.callback?.onError(holder: castedAction, error: error)
+      self.callback?.onError(holder: action, error: error)
     }
-  }
-  
-  func cancel(action: Any) {
-    guard let castedAction = action as? ActionHolder<ServiceAction> else {
-      return
-    }
-    cancel(action: castedAction)
-  }
-  
-  func accepts(action: Any) -> Bool {
-    return action is ServiceAction
   }
 }
