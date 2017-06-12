@@ -1,21 +1,22 @@
 import Foundation
 import RxSwift
 
-public final class ActionPipe <Action: JanetAction> {
-  public typealias ActionSender<T: JanetAction> = (T) -> Observable<ActionState<T>>
-  public typealias ActionCancel<T: JanetAction> = (T) -> Void
+public final class ActionPipe <Action> {
+  public typealias ActionSender<T> = (T) -> Observable<ActionState<T>>
+  public typealias ActionCancel<T> = (T) -> Void
+  public typealias StatePipeline<T> = Observable<ActionState<T>>
   
   private let bag: DisposeBag = DisposeBag()
   private let defaultScheduler: SchedulerType?
   
-  private let actionSender: ActionSender<Action>
-  private let actionCancel: ActionCancel<Action>
-  private let statePipe: Observable<ActionState<Action>>
+  private var actionSender: ActionSender<Action>!
+  private var actionCancel: ActionCancel<Action>!
+  private let statePipe: StatePipeline<Action>
   
-  internal init(statePipe: Observable<ActionState<Action>>,
-                actionSender: @escaping ActionSender<Action>,
+  internal init(statePipe: StatePipeline<Action>,
+                defaultScheduler: SchedulerType?  = nil,
                 actionCancel: @escaping ActionCancel<Action>,
-                defaultScheduler: SchedulerType?  = nil) {
+                actionSender: @escaping ActionSender<Action>) {
     self.statePipe = statePipe
     self.actionSender = actionSender
     self.actionCancel = actionCancel

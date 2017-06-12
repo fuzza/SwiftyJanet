@@ -3,7 +3,7 @@ import RxSwift
 import RxTest
 import XCTest
 
-class JanetTestCase <Action: JanetAction>: XCTestCase {
+class JanetTestCase <Action>: XCTestCase {
   
   var janet: Janet!
   var service: MockService<Action>!
@@ -11,13 +11,13 @@ class JanetTestCase <Action: JanetAction>: XCTestCase {
   
   var bag: DisposeBag!
   var scheduler: TestScheduler!
-  var observer: TestableObserver<ActionState<String>>!
+  var observer: TestableObserver<ActionState<Action>>!
   
   override func setUp() {
     super.setUp()
     bag = DisposeBag()
     scheduler = TestScheduler(initialClock: 0)
-    observer = scheduler.createObserver(ActionState<String>.self)
+    observer = scheduler.createObserver(ActionState<Action>.self)
     
     service = provideService()
     janet = provideJanet(service: service)

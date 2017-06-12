@@ -42,8 +42,8 @@ class ActionServiceTests: XCTestCase {
     }
     
     let action = ActionHolder.create(action: "test")
-    let expectedPair = (action, ActionState.error("test", JanetError.serviceError))
-    
+    let expectedPair = ActionPair(holder: action,
+                                  state: ActionState.error("test", JanetError.serviceError))
     var resultPair: ActionPair<String>? = nil
     _ = callback.pipeline.take(1).subscribe(onNext: { pair in
       resultPair = pair as? ActionPair<String>

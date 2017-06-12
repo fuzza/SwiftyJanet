@@ -8,27 +8,27 @@ public final class ActionServiceCallback {
     self.pipeline = pipeline
   }
   
-  public func onStart<T: JanetAction>(holder: ActionHolder<T>) {
-    pipeline.onNext(
-      (holder, ActionState.start(holder.modified))
-    )
+  public func onStart<T>(holder: ActionHolder<T>) {
+    let pair = ActionPair(holder: holder,
+                          state: ActionState.start(holder.modified))
+    pipeline.onNext(pair.cast(to: Any.self)!)
   }
   
-  public func onProgress<T: JanetAction>(holder: ActionHolder<T>, progress: Double) {
-    pipeline.onNext(
-      (holder, ActionState.progress(holder.modified, progress))
-    )
+  public func onProgress<T>(holder: ActionHolder<T>, progress: Double) {
+    let pair = ActionPair(holder: holder,
+                          state: ActionState.progress(holder.modified, progress))
+    pipeline.onNext(pair.cast(to: Any.self)!)
   }
   
-  public func onSuccess<T: JanetAction>(holder: ActionHolder<T>) {
-    pipeline.onNext(
-      (holder, ActionState.success(holder.modified))
-    )
+  public func onSuccess<T>(holder: ActionHolder<T>) {
+    let pair = ActionPair(holder: holder,
+                          state: ActionState.success(holder.modified))
+    pipeline.onNext(pair.cast(to: Any.self)!)
   }
   
-  public func onError<T: JanetAction>(holder: ActionHolder<T>, error: Error) {
-    pipeline.onNext(
-      (holder, ActionState.error(holder.modified, error))
-    )
+  public func onError<T>(holder: ActionHolder<T>, error: Error) {
+    let pair = ActionPair(holder: holder,
+                          state:ActionState.error(holder.modified, error))
+    pipeline.onNext(pair.cast(to: Any.self)!)
   }
 }

@@ -1,5 +1,8 @@
 @testable import SwiftyJanet
 
-func == <T: JanetAction> (lhs: ActionPair<T>, rhs: ActionPair<T>) -> Bool {
-  return (lhs.0 == rhs.0) && (lhs.1 == rhs.1)
+extension ActionPair: Equatable {
+  public static func == (lhs: ActionPair<Action>, rhs: ActionPair<Action>) -> Bool {
+    return lhs.holder == rhs.holder &&
+           lhs.state == rhs.state
+  }
 }

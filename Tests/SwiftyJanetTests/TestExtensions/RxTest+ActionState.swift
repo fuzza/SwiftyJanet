@@ -6,7 +6,7 @@ extension TestableObserver {
 
   // MARK: Assertions
 
-  func verifySuccessSequence<A: JanetAction>(action: A,
+  func verifySuccessSequence<A>(action: A,
                                              time: TestTime = 0,
                                              file: StaticString = #file,
                                              line: UInt = #line) where Element == ActionState<A> {
@@ -15,7 +15,7 @@ extension TestableObserver {
                  line: line)
   }
 
-  func verifyErrorSequence<A: JanetAction>(action: A,
+  func verifyErrorSequence<A>(action: A,
                                            error: Error,
                                            time: TestTime = 0,
                                            file: StaticString = #file,
@@ -26,7 +26,7 @@ extension TestableObserver {
                  line: line)
   }
 
-  func verifySuccessSequenceCompleted<A: JanetAction>(action: A,
+  func verifySuccessSequenceCompleted<A>(action: A,
                                                       time: TestTime = 0,
                                                       file: StaticString = #file,
                                                       line: UInt = #line)
@@ -36,7 +36,7 @@ extension TestableObserver {
                  line: line)
   }
 
-  func verifyErrorSequenceCompleted<A: JanetAction>(action: A,
+  func verifyErrorSequenceCompleted<A>(action: A,
                                                     error: Error,
                                                     time: TestTime = 0,
                                                     file: StaticString = #file,
@@ -47,7 +47,7 @@ extension TestableObserver {
                  line: line)
   }
 
-  func verifyCancelled<A: JanetAction>(action: A,
+  func verifyCancelled<A>(action: A,
                                        time: TestTime = 0,
                                        file: StaticString = #file,
                                        line: UInt = #line) where Element == ActionState<A> {
@@ -56,7 +56,7 @@ extension TestableObserver {
                  line: line)
   }
 
-  func verifyEvents<A: JanetAction>(events: [TestStateRecorded<A>],
+  func verifyEvents<A>(events: [TestStateRecorded<A>],
                                     file: StaticString = #file,
                                     line: UInt = #line) where Element == ActionState<A> {
     XCTAssertEqual(self.events,
@@ -67,7 +67,7 @@ extension TestableObserver {
 
   // MARK: ActionState sequences stub
 
-  func cancelled<A: JanetAction>(action: A,
+  func cancelled<A>(action: A,
                                  time: TestTime = 0)
     -> [TestStateRecorded<A>] {
       return [
@@ -75,7 +75,7 @@ extension TestableObserver {
       ]
   }
 
-  func successSequence<A: JanetAction>(action: A,
+  func successSequence<A>(action: A,
                                        time: TestTime = 0)
     -> [TestStateRecorded<A>] {
       return [
@@ -86,7 +86,7 @@ extension TestableObserver {
       ]
   }
 
-  func errorSequence<A: JanetAction>(action: A,
+  func errorSequence<A>(action: A,
                                      error: Error,
                                      time: TestTime = 0) -> [TestStateRecorded<A>] {
     return [
@@ -97,14 +97,14 @@ extension TestableObserver {
     ]
   }
 
-  func successSequenceCompleted<A: JanetAction>(action: A,
+  func successSequenceCompleted<A>(action: A,
                                                 time: TestTime = 0) -> [TestStateRecorded<A>] {
     let events: [TestStateRecorded<A>]  = successSequence(action: action, time: time)
     let event = completed(time, ActionState<A>.self)
     return events + [event]
   }
 
-  func errorSequenceCompleted<A: JanetAction>(action: A,
+  func errorSequenceCompleted<A>(action: A,
                                               error: Error,
                                               time: TestTime = 0) -> [TestStateRecorded<A>] {
     let events = errorSequence(action: action, error: error, time: time)

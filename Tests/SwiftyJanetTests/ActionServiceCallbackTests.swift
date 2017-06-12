@@ -18,7 +18,8 @@ class ActionServiceCallbackTests: XCTestCase {
   func test_onStart() {
     // Arrange
     let holder = ActionHolder(origin: "test_origin", modified: "test_action")
-    let expectedResult = (holder, ActionState.start("test_action"))
+    let expectedResult = ActionPair(holder: holder,
+                                    state: ActionState.start("test_action"))
     
     var result: ActionPair<String>? = nil
     
@@ -37,7 +38,8 @@ class ActionServiceCallbackTests: XCTestCase {
   func test_onProgress() {
     // Arrange
     let holder = ActionHolder(origin: "test_origin", modified: "test_action")
-    let expectedResult = (holder, ActionState.progress("test_action", 2.3))
+    let expectedResult = ActionPair(holder: holder,
+                                    state: ActionState.progress("test_action", 2.3))
     
     var result: ActionPair<String>? = nil
     
@@ -56,7 +58,8 @@ class ActionServiceCallbackTests: XCTestCase {
   func test_onSuccess() {
     // Arrange
     let holder = ActionHolder(origin: "test_origin", modified: "test_action")
-    let expectedResult = (holder, ActionState.success("test_action"))
+    let expectedResult = ActionPair(holder: holder,
+                                    state: ActionState.success("test_action"))
     
     var result: ActionPair<String>? = nil
     
@@ -75,7 +78,8 @@ class ActionServiceCallbackTests: XCTestCase {
   func test_onError() {
     // Arrange
     let holder = ActionHolder(origin: "test_origin", modified: "test_action")
-    let expectedResult = (holder, ActionState.error("test_action", TestError.test))
+    let expectedResult = ActionPair(holder: holder,
+                                    state: ActionState.error("test_action", TestError.test))
     
     var result: ActionPair<String>? = nil
     pipeline.subscribe(onNext: { pair in

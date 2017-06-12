@@ -1,7 +1,7 @@
 import Foundation
 import SwiftyJanet
 
-class JanetTestAction: JanetAction { }
+class JanetTestAction { }
 
 extension JanetTestAction {
   static func == (lhs: JanetTestAction, rhs: JanetTestAction) -> Bool {

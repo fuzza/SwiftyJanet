@@ -81,7 +81,7 @@ class JanetTestsSendDeferred: JanetTestCase<String> {
     observer.verifySuccessSequenceCompleted(action: "mirror_action")
     pipelineObserver.verifySuccessSequence(action: "mirror_action")
   }
-  
+
   // MARK: Private helpers
   private func sendDeferred(action: String) {
     actionPipe.sendDeferred(action).subscribe(observer).disposed(by: bag)

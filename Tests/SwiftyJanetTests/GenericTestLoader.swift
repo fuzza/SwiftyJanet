@@ -18,7 +18,8 @@ class GenericTestLoader: NSObject, XCTestObservation {
     return [
       JanetTestsSend.self,
       JanetTestsCancel.self,
-      JanetTestsSendDeferred.self
+      JanetTestsSendDeferred.self,
+      JanetTestsSubclassing.self
     ]
   }
 }

@@ -7,7 +7,6 @@ import XCTest
 class JanetTestsSend: JanetTestCase<String> {
 
   // MARK: Setup
-  
   override public func providePipe(janet: Janet) -> ActionPipe<String> {
     let actionPipe = super.providePipe(janet: janet)
     actionPipe.observe().subscribe(observer).disposed(by: bag)
