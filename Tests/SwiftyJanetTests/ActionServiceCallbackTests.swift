@@ -24,7 +24,7 @@ class ActionServiceCallbackTests: XCTestCase {
     var result: ActionPair<String>? = nil
     
     pipeline.subscribe(onNext: { pair in
-      result = pair as? ActionPair<String>
+      result = pair.cast(to: String.self)
     }).disposed(by: disposeBag)
     
     // Act
@@ -44,7 +44,7 @@ class ActionServiceCallbackTests: XCTestCase {
     var result: ActionPair<String>? = nil
     
     pipeline.subscribe(onNext: { pair in
-      result = pair as? ActionPair <String>
+      result = pair.cast(to: String.self)
     }).disposed(by: disposeBag)
     
     // Act
@@ -64,7 +64,7 @@ class ActionServiceCallbackTests: XCTestCase {
     var result: ActionPair<String>? = nil
     
     pipeline.subscribe(onNext: { pair in
-      result = pair as? ActionPair<String>
+      result = pair.cast(to: String.self)
     }).disposed(by: disposeBag)
     
     // Act
@@ -83,7 +83,7 @@ class ActionServiceCallbackTests: XCTestCase {
     
     var result: ActionPair<String>? = nil
     pipeline.subscribe(onNext: { pair in
-      result = pair as? ActionPair<String>
+      result = pair.cast(to: String.self)
     }).disposed(by: disposeBag)
     
     // Act

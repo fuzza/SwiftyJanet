@@ -25,10 +25,3 @@ public struct ActionHolder <Action> {
                            modified: castedModified)
   }
 }
-
-//extension ActionHolder: Equatable {
-//  public static func == (lhs: ActionHolder<Action>, rhs: ActionHolder<Action>) -> Bool {
-//    return lhs.origin.isEqual(to: rhs.origin) &&
-//           lhs.modified.isEqual(to: rhs.modified)
-//  }
-//}

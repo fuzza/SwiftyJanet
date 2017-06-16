@@ -25,7 +25,7 @@ class ActionServiceTests: XCTestCase {
     // Arrange
     let action = ActionHolder.create(action: "test")
     mockService.sendStub = { _, holder in
-      XCTAssertEqual(holder, action)
+      XCTAssertTrue(holder == action)
     }
     
     // Act
@@ -46,7 +46,7 @@ class ActionServiceTests: XCTestCase {
                                   state: ActionState.error("test", JanetError.serviceError))
     var resultPair: ActionPair<String>? = nil
     _ = callback.pipeline.take(1).subscribe(onNext: { pair in
-      resultPair = pair as? ActionPair<String>
+      resultPair = pair.cast(to: String.self)
     })
     
     // Act

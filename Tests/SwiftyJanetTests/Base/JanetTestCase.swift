@@ -3,7 +3,7 @@ import RxSwift
 import RxTest
 import XCTest
 
-class JanetTestCase <Action>: XCTestCase {
+class JanetTestCase <Action: Equatable>: XCTestCase {
   
   var janet: Janet!
   var service: MockService<Action>!
