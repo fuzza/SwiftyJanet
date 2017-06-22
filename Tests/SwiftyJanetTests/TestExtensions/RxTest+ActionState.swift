@@ -1,11 +1,11 @@
 import SwiftyJanet
+import RxSwift
 import RxTest
+import XCTest
 import Foundation
 
 extension TestableObserver {
-
   // MARK: Assertions
-
   func verifySuccessSequence<A: Equatable>(action: A,
                                            time: TestTime = 0,
                                            file: StaticString = #file,
@@ -59,14 +59,32 @@ extension TestableObserver {
   func verifyEvents<A: Equatable>(events: [TestStateRecorded<A>],
                                   file: StaticString = #file,
                                   line: UInt = #line) where Element == ActionState<A> {
-    XCTAssertEqual(self.events,
-                   events,
-                   file: file,
-                   line: line)
+    guard self.events.count == events.count else {
+      failEvents(events: events, file: file, line: line)
+      return
+    }
+    
+    for event in self.events {
+      var hasPair = false
+      for anotherEvent in events where anotherEvent == event {
+          hasPair = true
+          break
+      }
+      guard hasPair == true else {
+        failEvents(events: events, file: file, line: line)
+        return
+      }
+    }
   }
 
+  func failEvents<A: Equatable>(events: [TestStateRecorded<A>],
+                                file: StaticString = #file,
+                                line: UInt = #line) where Element == ActionState<A> {
+    XCTFail("\(self.events.debugDescription) not equal to expected \(events.debugDescription)",
+      file: file, line: line)
+  }
+  
   // MARK: ActionState sequences stub
-
   func cancelled<A: Equatable>(action: A,
                                time: TestTime = 0)
     -> [TestStateRecorded<A>] {

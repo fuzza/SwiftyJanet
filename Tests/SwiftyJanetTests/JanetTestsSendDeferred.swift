@@ -59,14 +59,16 @@ class JanetTestsSendDeferred: JanetTestCase<String> {
   
   func test_subscribesOnDefaultScheduler() {
     // Arrange
-    let pipe = self.providePipe(janet: janet, scheduler: scheduler)
+    let localScheduler = TestScheduler(initialClock: 123)
+    let localObserver = localScheduler.createObserver(ActionState<String>.self)
+    let pipe = self.providePipe(janet: janet, scheduler: localScheduler)
     
     // Act
-    pipe.sendDeferred("test_action").subscribe(observer).disposed(by:self.bag)
-    scheduler.start()
+    pipe.sendDeferred("test_action").subscribe(localObserver).disposed(by:self.bag)
+    localScheduler.start()
     
     // Asser
-    observer.verifySuccessSequenceCompleted(action: "test_action", time: 1)
+    localObserver.verifySuccessSequenceCompleted(action: "test_action", time: 123)
   }
   
   func test_mirrorsEventsToPipeline() {

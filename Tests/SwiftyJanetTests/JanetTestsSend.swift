@@ -43,16 +43,17 @@ class JanetTestsSend: JanetTestCase<String> {
   
   func test_subscribesOnDefaultScheduler() {
     // Arrange
-    let localObserver = scheduler.createObserver(ActionState<String>.self)
-    let pipe = self.providePipe(janet: janet, scheduler: scheduler)
+    let localScheduler = TestScheduler(initialClock: 55)
+    let localObserver = localScheduler.createObserver(ActionState<String>.self)
+    let pipe = self.providePipe(janet: janet, scheduler: localScheduler)
     pipe.observe().subscribe(localObserver).disposed(by: bag)
     
     // Act
     pipe.send("test_action")
-    scheduler.start()
+    localScheduler.start()
     
     // Asser
-    localObserver.verifySuccessSequence(action: "test_action", time: 1)
+    localObserver.verifySuccessSequence(action: "test_action", time: 55)
   }
   
   func test_observesAllActionsOfGivenType() {
