@@ -29,6 +29,9 @@
 		6F78672A1EDC94F2003D4660 /* GenericTestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867281EDC94CD003D4660 /* GenericTestLoader.swift */; };
 		6F78672B1EDC94F3003D4660 /* GenericTestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867281EDC94CD003D4660 /* GenericTestLoader.swift */; };
 		6F78672C1EDC94F3003D4660 /* GenericTestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7867281EDC94CD003D4660 /* GenericTestLoader.swift */; };
+		6FB416371F018976006B3ABF /* Tests+JanetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75982D291EE6F82D0017C576 /* Tests+JanetAction.swift */; };
+		6FB416381F018976006B3ABF /* Tests+JanetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75982D291EE6F82D0017C576 /* Tests+JanetAction.swift */; };
+		6FB416391F018977006B3ABF /* Tests+JanetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75982D291EE6F82D0017C576 /* Tests+JanetAction.swift */; };
 		7544F1171ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F1181ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
 		7544F1191ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F1161ED5D6A1006D2318 /* ActionPair+Equatable.swift */; };
@@ -154,6 +157,7 @@
 		7573281E1ED8421C00283A71 /* RxTest+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxTest+Extensions.swift"; sourceTree = "<group>"; };
 		757328251ED863A600283A71 /* JanetTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanetTestCase.swift; sourceTree = "<group>"; };
 		7573282B1ED86BDC00283A71 /* JanetTestAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JanetTestAction.swift; sourceTree = "<group>"; };
+		75982D291EE6F82D0017C576 /* Tests+JanetAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tests+JanetAction.swift"; sourceTree = "<group>"; };
 		75B1A2521ED48FCE003126B6 /* ActionStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStateTests.swift; sourceTree = "<group>"; };
 		75B1A2571ED49146003126B6 /* ActionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionState.swift; sourceTree = "<group>"; };
 		75B1A25D1ED49392003126B6 /* ActionHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHolder.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 				7573281E1ED8421C00283A71 /* RxTest+Extensions.swift */,
 				75E037721EDC49850078FFA8 /* RxTest+ActionState.swift */,
 				75E037771EDC620F0078FFA8 /* ActionServiceCallback+Stub.swift */,
+				75982D291EE6F82D0017C576 /* Tests+JanetAction.swift */,
 			);
 			path = TestExtensions;
 			sourceTree = "<group>";
@@ -791,6 +796,7 @@
 				6F78672A1EDC94F2003D4660 /* GenericTestLoader.swift in Sources */,
 				75C230031ED5B582008B4FCB /* TypedActionServiceTests.swift in Sources */,
 				757328261ED863A600283A71 /* JanetTestCase.swift in Sources */,
+				6FB416371F018976006B3ABF /* Tests+JanetAction.swift in Sources */,
 				75B1A2631ED49688003126B6 /* ActionServiceCallbackTests.swift in Sources */,
 				6F7867141ED4BF23003D4660 /* TestErrors.swift in Sources */,
 				7544F1171ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */,
@@ -863,6 +869,7 @@
 				6F78672B1EDC94F3003D4660 /* GenericTestLoader.swift in Sources */,
 				75C230041ED5B59D008B4FCB /* TypedActionServiceTests.swift in Sources */,
 				757328271ED863A600283A71 /* JanetTestCase.swift in Sources */,
+				6FB416381F018976006B3ABF /* Tests+JanetAction.swift in Sources */,
 				6F7867131ED4BF22003D4660 /* TestErrors.swift in Sources */,
 				6F7867161ED4BF29003D4660 /* ActionStateTests.swift in Sources */,
 				7544F1181ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */,
@@ -887,6 +894,7 @@
 				6F78672C1EDC94F3003D4660 /* GenericTestLoader.swift in Sources */,
 				75C230051ED5B59D008B4FCB /* TypedActionServiceTests.swift in Sources */,
 				757328281ED863A600283A71 /* JanetTestCase.swift in Sources */,
+				6FB416391F018977006B3ABF /* Tests+JanetAction.swift in Sources */,
 				6F7867151ED4BF24003D4660 /* TestErrors.swift in Sources */,
 				6F7867171ED4BF29003D4660 /* ActionStateTests.swift in Sources */,
 				7544F1191ED5D6A1006D2318 /* ActionPair+Equatable.swift in Sources */,

@@ -1,8 +1,9 @@
 import Foundation
+import SwiftyJanet
 
-class JanetTestAction { }
+class JanetTestAction: JanetAction { }
 
-extension JanetTestAction: Equatable {
+extension JanetTestAction {
   static func == (lhs: JanetTestAction, rhs: JanetTestAction) -> Bool {
     return lhs === rhs
   }
